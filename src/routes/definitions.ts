@@ -2,17 +2,28 @@ import { JSXElementConstructor } from 'react';
 import { RouteProps } from 'react-router-dom';
 import Dashboard from 'src/pages/dashboard';
 
-export const SCREEN = {
-    DASHBOARD:          '/',
+/**
+* 화면별 path
+*/
+export const PAGE = {
+    DASHBOARD:  '/',
+    RESEARCH:   '/research',    
+    INSIGHT:    '/insight', 
+    MEMBERS:    '/members',
+    CALENDAR:   '/calendar',
 };
 
+/**
+* PAGE별 Route를 위한 설정값 
+*/
 export interface IRouteConfig extends RouteProps{
-    constructor:      JSXElementConstructor<any>;
+    /** 해당 PAGE 접근 시 표시할 Component의 생성 함수 */
+    constructor: JSXElementConstructor<any>;
 }
 
 export const ROUTE: { [key: string]: IRouteConfig; } = {
-    [SCREEN.DASHBOARD]: {
-        path: SCREEN.DASHBOARD,
+    [PAGE.DASHBOARD]: {
+        path: PAGE.DASHBOARD,
         constructor: Dashboard,
     },
 };
