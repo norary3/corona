@@ -2,11 +2,17 @@
 import { Property } from 'csstype';
 
 const colors = {
-    BackgroundGray: '#F8F8F8',
+    
     PrimaryBlue:    '#2878F0',
+    
+    DarkerBlack:    '#4A4A4A',
     DefualtBlack:   '#3C3C46',
     TextBlack:      '#282828',
+
+    BackgroundGray: '#F8F8F8',
     LineGray:       '#CCCCCC',
+    LighterGray:    '#C4C4C4',
+
 };
 type NamedColor = keyof typeof colors;
 export const Color = colors as {[key in NamedColor]:Property.Color};
