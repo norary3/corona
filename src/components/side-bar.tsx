@@ -83,12 +83,12 @@ const MenuLabel = styled.p<{
 /** 개별 메뉴 아이템 */
 function MenuItem({
     Icon,
-    label,
+    children,
     to,
     selected = false,
 }:{
     Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-    label: string | undefined;
+    children: string | undefined;
     to: To;
     selected?: boolean;
 }) {
@@ -96,7 +96,7 @@ function MenuItem({
     return <MenuItemContainer>
         <SelectableLink selected={ selected } to={ to }>
             <Icon fill={ selected ? Color.PrimaryBlue : Color.DefualtBlack }/>
-            <MenuLabel selected={ selected }>{ label }</MenuLabel>
+            <MenuLabel selected={ selected }>{ children }</MenuLabel>
         </SelectableLink>
     </MenuItemContainer>
 }
@@ -110,7 +110,7 @@ function Menu() {
         paddingInlineStart: 0,
     }}>
         { ITEMS.map(item => {
-            return <MenuItem Icon={ item.icon } label={ item.label } to={ item.to } selected={ path === item.to }/> 
+            return <MenuItem Icon={ item.icon } to={ item.to } selected={ path === item.to }>{ item.label }</MenuItem> 
         }) }
     </ul>
 }
