@@ -49,6 +49,8 @@ const TitleLabel = styled.p`
     color: ${Color.DarkerBlack};
 `;
 
+const tickFormatter = (value: number) => new Intl.NumberFormat('en').format(value)
+
 function ChartTitle({
     children,
 }:{
@@ -98,10 +100,11 @@ function TotoalChart() {
                     <Line dataKey="count" dot={ false }/>
                     <XAxis style={{
                         fill: Color.DefualtBlack,
-                    }} dataKey="dateString" />
+                    }} dataKey="dateString" padding={{ left: 24, right: 24 }}/>
                     <YAxis style={{
                         fill: Color.LighterGray,
-                    }} domain={ domain }/>
+                    }} domain={ domain }
+                    tickFormatter={ tickFormatter }/>
                 </LineChart>
             </ResponsiveContainer>
             <DropDown items={ DROP_DOWN_ITEMS }/>
@@ -151,7 +154,7 @@ function DailyByAgeGroupChart({
                     }} dataKey="dateString" type="category" />
                     <XAxis style={{
                         fill: Color.LighterGray,
-                    }} type="number" />
+                    }} type="number" tickFormatter={ tickFormatter }/>
                     <Legend formatter={ renderLegendText }/>
                     { ageGroups.map((ag, idx)=>{
                         return <Bar
@@ -217,10 +220,13 @@ function GenderChart({
                         data={selectedData}
                         dataKey="value"
                         innerRadius="33%"
-                        startAngle={-90}
-                        endAngle={360}>
+                        startAngle={90}
+                        endAngle={-270}>
                         {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={GENDER_COLORS[index % GENDER_COLORS.length]} />
+                            <Cell
+                                key={`cell-${index}`}
+                                fill={GENDER_COLORS[index % GENDER_COLORS.length]}
+                                stroke="none" />
                         ))}
                     </Pie>
                     <Legend formatter={ renderLegendText }/>
@@ -232,7 +238,7 @@ function GenderChart({
 
 function Dashboard() {
 
-    const [selected, select] = useState( formatDate(new Date(2021,11,1)) );
+    const [selected, select] = useState( formatDate(new Date(2021,10,1)) );
     const [ageData, setAgeData] = useState<AgeCaseInf[]>([]);
     const [genderData, setGenderData] = useState<GenCaseInf[]>([]);
 
