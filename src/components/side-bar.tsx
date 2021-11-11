@@ -110,7 +110,13 @@ function Menu() {
         paddingInlineStart: 0,
     }}>
         { ITEMS.map(item => {
-            return <MenuItem Icon={ item.icon } to={ item.to } selected={ path === item.to }>{ item.label }</MenuItem> 
+            return <MenuItem
+            key={ item.label }
+            Icon={ item.icon }
+            to={ item.to }
+            selected={ path === item.to }>
+                { item.label }
+                </MenuItem> 
         }) }
     </ul>
 }
