@@ -20,7 +20,7 @@ const Section = styled.div`
 
 const Label = styled.p`
     font-size: 14px;
-    font-weight: normal;
+    font-weight: 500;
 `
 
 function Item({
@@ -71,7 +71,9 @@ function DropDown({
             display: spread ? 'block' : 'none',
         }}>
             { items.filter(item=>item !== selected).map(item =>{
-                return <Item onClick={ ()=>handleItemSelect(item) }>{ item }</Item>;
+                return <Item
+                key={ item }
+                onClick={ ()=>handleItemSelect(item) }>{ item }</Item>;
                 })}
         </ul>
     </Container>;
