@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
     }
 
+    li {
+        list-style: none;
+    }
 `;
 
 export default GlobalStyle;

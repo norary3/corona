@@ -10,7 +10,7 @@ import { PAGE } from 'src/routes/definitions';
 import { Color } from 'src/styles/guideline';
 import styled from 'styled-components';
 
-const WIDTH =               252;
+const WIDTH =               156;
 const PADDING =             48;
 const ITEM_HEIGHT =         40;
 const SPACE_LABEL_LIST =    40;
@@ -60,7 +60,6 @@ function Header({
 }
 
 const MenuItemContainer = styled.li`
-    list-style: none;
     margin-bottom: ${SPACE_LIST_ITEM}px;
 `;
 const SelectableLink = styled(Link)<{
