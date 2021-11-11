@@ -4,7 +4,7 @@ import SideBar from 'src/components/side-bar';
 import { Color } from 'src/guideline';
 import styled from 'styled-components';
 
-import { ROUTE } from './definitions';
+import { ROUTE } from '../routes/definitions';
 
 /** 사이드바와 메인섹션을 포함하는 사이트 전체 */
 const AppBlock = styled.div`

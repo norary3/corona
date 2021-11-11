@@ -1,4 +1,4 @@
-import RootContainer from './routes/root-container';
+import RootContainer from './pages/root-container';
 import GlobalStyle from './styles/global-style';
 
 function App() {
