@@ -1,10 +1,13 @@
-import React from 'react';
 import RootContainer from './routes/root-container';
+import GlobalStyle from './styles/global-style';
 
 function App() {
   return (
-    <RootContainer />
-  );
+    <>
+      <GlobalStyle />
+      <RootContainer />
+    </>
+  );  
 }
 
 export default App;
