@@ -6,8 +6,8 @@ import { ReactComponent as Insight } from 'src/assets/icon-insight.svg';
 import { ReactComponent as Logo } from 'src/assets/icon-logo.svg';
 import { ReactComponent as Members } from 'src/assets/icon-members.svg';
 import { ReactComponent as Research } from 'src/assets/icon-research.svg';
-import { Color } from 'src/guideline';
 import { PAGE } from 'src/routes/definitions';
+import { Color } from 'src/styles/guideline';
 import styled from 'styled-components';
 
 const WIDTH =               252;
@@ -16,6 +16,7 @@ const ITEM_HEIGHT =         40;
 const SPACE_LABEL_LIST =    40;
 const SPACE_LIST_ITEM =     32;
 const SPACE_ICO_LABEL =     8;
+const FONT_SIZE =           16;
 
 interface MenuItemConfig {
     /** 각 아이템에 표시될 아이콘 SVG */
@@ -76,7 +77,7 @@ const MenuLabel = styled.p<{
     selected: boolean;
 }>`
     margin-left: ${SPACE_ICO_LABEL}px;
-    font-size: 16;
+    font-size: ${FONT_SIZE}px;
     line-height: 1;
     font-weight: ${ props => props.selected ? 'bold' : 'normal' };
 `;

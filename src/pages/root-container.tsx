@@ -1,7 +1,7 @@
 import { values } from 'lodash';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SideBar from 'src/components/side-bar';
-import { Color } from 'src/guideline';
+import { Color } from 'src/styles/guideline';
 import styled from 'styled-components';
 
 import { ROUTE } from '../routes/definitions';
